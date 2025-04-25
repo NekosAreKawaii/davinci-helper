@@ -14,8 +14,14 @@ mv davinci-helper davinci-helper-${version}
 
 tar -cvzf davinci-helper-${version}.tar.gz davinci-helper-${version}
 
+# Create missing directory
 mkdir /home/$USER/rpmbuild/SOURCES/
+
 mv davinci-helper-${version}.tar.gz "/home/$USER/rpmbuild/SOURCES/"
+
+# Install probably missing dependencies
+sudo dnf install -y gtk4-devel libadwaita-devel pyproject-rpm-macros python3-devel python3-wheel
+
 rpmbuild -bb davinci-helper.spec 
 
 
