@@ -14,6 +14,7 @@ mv davinci-helper davinci-helper-${version}
 
 tar -cvzf davinci-helper-${version}.tar.gz davinci-helper-${version}
 
+mkdir /home/$USER/rpmbuild/SOURCES/
 mv davinci-helper-${version}.tar.gz "/home/$USER/rpmbuild/SOURCES/"
 rpmbuild -bb davinci-helper.spec 
 
